@@ -12,13 +12,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "playaround"
-version = "0.1.0"
-dependencies = [
- "my_proc_macro",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "1.0.70"
 source = "registry+https://github.com/rust-lang/crates.io-index"
