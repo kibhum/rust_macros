@@ -1,6 +1,9 @@
 #[cfg(test)]
 mod tests {
 
+    use std::cell::RefCell;
+    use std::rc::{Rc, Weak};
+
     #[test]
     #[allow(dead_code, unused_variables)]
     fn tests_box_smart_pointers() {
@@ -9,7 +12,7 @@ mod tests {
         struct Node {
             id: u32,
             next: Option<Box<Node>>,
-        };
+        }
 
         let nodes: Box<Node> = Box::new(Node {
             id: 0,
@@ -20,7 +23,15 @@ mod tests {
         });
         dbg!(nodes);
     }
+
     #[test]
     #[allow(dead_code, unused_variables)]
-    fn tests_reference_counter() {}
+    fn tests_reference_counter() {
+        let x: Rc<RefCell<i32>> = Rc::new(RefCell::new(50));
+        let y: Rc<RefCell<i32>> = Rc::clone(&x);
+        *x.borrow_mut() = 70;
+
+        dbg!(x.borrow());
+        dbg!(y.borrow());
+    }
 }
