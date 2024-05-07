@@ -56,6 +56,26 @@ mod test {
         }
         };
     }
+    // declaration of a declarative
+    macro_rules! my_vec_a{
+        // (matcher) ⇒ (transcriber)
+    () => [Vec::new()];
+    // (matcher) ⇒ (transcriber)
+    (make an empty vec) => (Vec::new());
+    // (matcher) ⇒ (transcriber)
+    {$x:expr} => {{
+    let mut v = Vec::new();
+    v.push($x);
+    v
+    }};
+    // (matcher) ⇒ (transcriber)
+    [$($x:expr),+] => ({
+    let mut v = Vec::new();
+    $( v.push($x);)+
+    v
+    }
+    )
+    }
 
     #[test]
     fn test_declarative_macros() {
@@ -64,5 +84,11 @@ mod test {
         dbg!(y);
         // let some_var: String = mad_skills!(i32);
         // dbg!(some_var);
+        let empty: Vec<i32> = my_vec_a![];
+        dbg!(empty);
+        let also_empty: Vec<i32> = my_vec_a!(make an empty vec);
+        dbg!(also_empty);
+        let three_numbers = my_vec_a!(1, 2, 3);
+        dbg!(three_numbers);
     }
 }
