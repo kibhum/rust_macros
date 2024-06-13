@@ -1,2 +1,2 @@
-Write Powerful Rust Macros (MEAP V08) - Page 24
-Declaring and exporting declarative macros
+Write Powerful Rust Macros (MEAP V08) - Page 37
+Type aliases
