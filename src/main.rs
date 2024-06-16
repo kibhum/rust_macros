@@ -10,6 +10,7 @@ mod generate_get_value;
 
 use crate::greeting::base_greeting_fn;
 mod account;
+mod composing;
 
 struct FirstName {
     value: String,

@@ -1,2 +1,2 @@
-Write Powerful Rust Macros (MEAP V08) - Page 37
-Type aliases
+Write Powerful Rust Macros (MEAP V08) - Page 49
+A function to compose two functions
