@@ -9,6 +9,7 @@ mod greeting;
 mod generate_get_value;
 
 use crate::greeting::base_greeting_fn;
+mod account;
 
 struct FirstName {
     value: String,
@@ -36,4 +37,9 @@ fn main() {
     println!("{}", first_raise);
     let second_raise = calculate_raise("Sam".to_string(), "Smith".to_string(), 1000, 20);
     println!("{}", second_raise);
+    let name = FirstName {
+        value: "Kibethh".to_string(),
+    };
+    println!("{}", name.get_value());
+    account::transact();
 }
