@@ -28,6 +28,18 @@ fn calculate_raise(first_name: String, _last_name: String, _age: i32, current_pa
     }
 }
 
+macro_rules! hello_world {
+    ($something:ident) => {
+        impl $something {
+            fn hello_world(&self) {
+                println!("Hello world")
+            }
+        }
+    };
+}
+struct Example {}
+hello_world!(Example);
+
 fn main() {
     let greet = greeting!("Sam", "Heya");
     println!("{}", greet);
@@ -43,4 +55,7 @@ fn main() {
     };
     println!("{}", name.get_value());
     account::transact();
+
+    let e = Example {};
+    e.hello_world();
 }

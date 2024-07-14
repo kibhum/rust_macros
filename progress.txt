@@ -1,2 +1,2 @@
-Write Powerful Rust Macros (MEAP V08) - Page 49
-A function to compose two functions
+Write Powerful Rust Macros (MEAP V08) - Page 59
+3 A 'hello world' procedural macro

@@ -15,8 +15,29 @@ where
 {
     move |x| g(f(x))
 }
-
+macro_rules! compose {
+    ($last:expr) => { $last };
+    ($head:expr,$($tail:expr),+) => {
+    compose_two($head, compose!($($tail),+))
+    }
+    }
 pub fn compose() {
-    let two_composed_function =
-        compose_two(compose_two(add_one, stringify), prefix_with("Result: "));
+    let composed = compose!(add_one, stringify, prefix_with("Result: "));
+    println!("{}", composed(5));
 }
+macro_rules! compose_alt {
+    ($last:expr) => { $last };
+    ($head:expr => $($tail:expr)=>+) => {
+    compose_two($head, compose_alt!($($tail)=>+))
+    }
+    }
+fn compose_alternative() {
+    let composed = compose_alt!(
+    add_one => stringify => prefix_with("Result: ")
+    );
+    println!("{}", composed(5));
+}
+// pub fn compose() {
+//     let two_composed_function =
+//         compose_two(compose_two(add_one, stringify), prefix_with("Result: "));
+// }
