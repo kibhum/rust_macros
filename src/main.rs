@@ -8,6 +8,10 @@ mod greeting;
 #[macro_use]
 mod generate_get_value;
 
+#[macro_use]
+extern crate hello_world_proc_macro;
+#[derive(Hello)]
+struct Example;
 use crate::greeting::base_greeting_fn;
 mod account;
 mod composing;
@@ -37,8 +41,9 @@ macro_rules! hello_world {
         }
     };
 }
-struct Example {}
-hello_world!(Example);
+// Related to declarative macros
+// struct Example {}
+// hello_world!(Example);
 
 fn main() {
     let greet = greeting!("Sam", "Heya");
@@ -56,6 +61,7 @@ fn main() {
     println!("{}", name.get_value());
     account::transact();
 
-    let e = Example {};
-    e.hello_world();
+    // Related to declarative macros
+    // let e = Example {};
+    // e.hello_world();
 }

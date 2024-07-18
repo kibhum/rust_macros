@@ -3,6 +3,14 @@
 version = 3
 
 [[package]]
+name = "hello_world_proc_macro"
+version = "0.1.0"
+dependencies = [
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "my_proc_macro"
 version = "0.1.0"
 dependencies = [
@@ -15,6 +23,7 @@ dependencies = [
 name = "playaround"
 version = "0.1.0"
 dependencies = [
+ "hello_world_proc_macro",
  "my_proc_macro",
 ]
 
