@@ -1,2 +1,2 @@
 Write Powerful Rust Macros (MEAP V08) - Page 70
-3 A 'hello world' procedural macro
+Parsing the input and producing hardcoded output
