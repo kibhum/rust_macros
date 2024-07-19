@@ -64,4 +64,7 @@ fn main() {
     // Related to declarative macros
     // let e = Example {};
     // e.hello_world();
+
+    let e = Example {};
+    e.hello_world();
 }
