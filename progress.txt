@@ -1,2 +1,2 @@
-Write Powerful Rust Macros (MEAP V08) - Page 93
-4.5 Possible extensions
+Write Powerful Rust Macros (MEAP V08) - Page 97
+Implementing the Parse trait
