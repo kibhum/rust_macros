@@ -1,2 +1,2 @@
-Write Powerful Rust Macros (MEAP V08) - Page 81
-Making fields public with attribute macros
+Write Powerful Rust Macros (MEAP V08) - Page 93
+4.5 Possible extensions

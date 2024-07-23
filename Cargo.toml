@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 my_proc_macro = { path = "./my_proc_macro" }
 hello_world_proc_macro = { path = "./hello_world_proc_macro" }
+make-public-macro = { path = "./make-public-macro" }

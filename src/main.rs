@@ -8,10 +8,17 @@ mod greeting;
 #[macro_use]
 mod generate_get_value;
 
-#[macro_use]
-extern crate hello_world_proc_macro;
-#[derive(Hello)]
-struct Example;
+use make_public_macro::public;
+#[public]
+struct Example {
+    first: String,
+    pub second: u32,
+}
+
+// #[macro_use]
+// extern crate hello_world_proc_macro;
+// #[derive(Hello)]
+// struct Example;
 use crate::greeting::base_greeting_fn;
 mod account;
 mod composing;
@@ -65,6 +72,6 @@ fn main() {
     // let e = Example {};
     // e.hello_world();
 
-    let e = Example {};
-    e.hello_world();
+    // let e = Example {};
+    // e.hello_world();
 }
